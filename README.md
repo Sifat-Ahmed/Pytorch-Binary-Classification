@@ -1,4 +1,4 @@
-## This repository contains the source code of smoke detection project
+## This repository contains the source code of Binary classification
 
 ### How to Run
 
