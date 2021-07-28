@@ -36,3 +36,15 @@ def visualize_augmentations(dataset, idx=0, samples=12, cols=4, name = 'savefig.
     plt.tight_layout()
     plt.savefig(name)
     plt.show()
+    
+
+def plot_curves(val1, val2, title='', ylabel = '', xlabel = 'epochs', name='figure.png'):
+    plt.figure(figsize=(15,8))
+    plt.plot(val1)
+    plt.plot(val2)
+    plt.title(title)
+    plt.ylabel(ylabel)
+    plt.xlabel(xlabel)
+    plt.legend(['train', 'val'], loc='upper left')
+    plt.savefig(name)
+    plt.show()

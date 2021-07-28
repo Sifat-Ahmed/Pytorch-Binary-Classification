@@ -35,6 +35,8 @@ class MetricMonitor:
                 for (metric_name, metric) in self.metrics.items()
             ]
         )
+    def get(self, metric_name):
+        return self.metrics[metric_name]['avg']
 
 def calculate_accuracy(output, target):
     output = torch.sigmoid(output) >= 0.5
