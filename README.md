@@ -23,7 +23,7 @@ dataset_dir = 'smoke_data/dataset'  ## put the root directory of the dataset her
 ```
 ```
 resize = True                       ## By deafult the images will be resized. If it's false, 
-                                    ## then model will be trained on default size of the images
+                                    ## then the model will be trained on default size of the images
                                     ## and the dataset should not contain images of inconsistent size
 ```
 ```
@@ -45,7 +45,7 @@ device = cuda/cpu                   ## No need to change
 model_name = "resnet18"             ## For this project ResNet18/ResNet34/ResNet50 models were trained
                                     ## There is no difference in inference, but ResNet18 is faster
                                     ## It gives 12++ fps on CPU
-                                    ## Any model available in torchvision.models can be trained by changing the parameter.
+                                    ## Any model available in torchvision.models can be trained by changing this parameter.
 ```
 ```
 
@@ -66,7 +66,7 @@ classification_threshold = 0.75     ## The output of sigmoid function is either
                                     ## <0.1 or >0.9 so the threshold value can be
                                     ## chosen anything between 0.4~0.8.
                                     ## But choosing a higher value reduces false positives 
-                                    ## WHich can be seen in exceptional cases
+                                    ## Which can be seen in exceptional cases
 ```
 
 There are three different transform functions for training, validation and testing. Training process requires heavy image augmentation. Otherwise, there is a tendency of the model to overfit and learn nothing. For the augmentation purpose, albumentations library has been used.
@@ -77,7 +77,7 @@ The functions of the training transform are.
                                     ## Used to balance any distortion in the lighting
 - Cutout                            ## Creates small squares in the image and fills them with greyish color
                                     ## Significantly increases the accuracy as the model has 
-                                    ## a tendecy two identify white garbage as smoke
+                                    ## a tendecy to identify white garbage as smoke
 - Flip                              ## Flips the images randomly either horizontally or vertically
 - RGBShift                          ## Randomly shift the value of RGB layers
 - RandomFog                         ## Adds a fogginess in the images
